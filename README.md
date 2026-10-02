@@ -82,12 +82,6 @@ The Batch integration supports these language codes:
 | --- | --- |
 | English | `en-IN` |
 | Hindi | `hi-IN` |
-| Bengali | `bn-IN` |
-| Kannada | `kn-IN` |
-| Malayalam | `ml-IN` |
-| Marathi | `mr-IN` |
-| Tamil | `ta-IN` |
-| Telugu | `te-IN` |
 
 The API currently also accepts `gu-IN` and `pa-IN`, but the Batch worker rejects them. Use the eight codes above for the background workflow; aligning the API and UI validation is a remaining improvement.
 
