@@ -66,8 +66,18 @@ async def request_json(
             headers=headers,
             **kwargs,
         )
+        if not response.is_success:
+            target = "Gnani API" if api_key else "transcript download"
+            print(
+        f"[batch] {target}: {method} returned HTTP {response.status_code}",
+        flush=True,
+    )
     except (httpx.TimeoutException, httpx.RequestError) as exc:
-        raise RetryableBatchError(
+            print(
+            f"[batch] Request failed: {type(exc).__name__}",
+            flush=True,
+                )
+            raise RetryableBatchError(
             "Could not reach Gnani or its transcript storage."
         ) from exc
 
